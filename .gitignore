@@ -1,3 +1,4 @@
 .vscode
 YoloObjectDetection/images/*
 YoloObjectDetection/Yolo_Darknet/*.weights
+*/images/*
