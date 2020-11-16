@@ -3,7 +3,7 @@ import numpy as np
 
 # Load YoLo
 yolo_path = './ObjectDetection/Yolo_Darknet/'
-net = cv2.dnn.readNet(yolo_path+'yolov3.weights',
+net = cv2.dnn.readNet(yolo_path+'YOLO_V3.weights',
                       yolo_path+'yolo.cfg')
 
 classes = []
