@@ -2,9 +2,9 @@ import cv2
 import numpy as np
 
 # Load YoLo
-yolo_path = './ObjectDetection/Yolo_Darknet/'
-net = cv2.dnn.readNet(yolo_path+'YOLO_V3.weights',
-                      yolo_path+'yolo.cfg')
+yolo_path = './YoloObjectDetection/Yolo_Darknet/'
+net = cv2.dnn.readNet(yolo_path+'YOLO_V3.weights', yolo_path+'yolo.cfg')
+
 
 classes = []
 with open(yolo_path + 'coco.names', 'r') as f:
@@ -15,7 +15,7 @@ output_layers = [layer_names[i[0]-1] for i in net.getUnconnectedOutLayers()]
 
 
 # Load Image
-images_path = 'ObjectDetection/images/'
+images_path = './YoloObjectDetection/images/'
 img = cv2.resize(cv2.imread(images_path + 'room.jpg'), None, fx=.5, fy=.5)
 height, width, channels = img.shape
 
