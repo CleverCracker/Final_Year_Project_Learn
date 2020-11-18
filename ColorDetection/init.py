@@ -12,20 +12,9 @@ from sklearn.cluster import KMeans
 # Working with OpenCv
 # Load Image
 image = cv2.imread('./images/room.jpg')
-plt.imshow(image)
 
 # Convert Image into RED GREEN BLUE
 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-plt.imshow(image)
-
-# Convert Image into Grey
-grey_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-plt.imshow(grey_image, cmap='gray')
-
-
-# Resized Image
-resized_image = cv2.resize(image, (1200, 600))
-plt.imshow(resized_image)
 
 
 def RGB2HEX(color):
@@ -73,13 +62,13 @@ def get_colors(image, number_of_colors=5, show_chart=False):
     # Order Color by iterative through the key
 
     ordered_colors = [center_colors[i] for i in counts.keys()]
-    hex_colors = [RGB2HEX(ordered_colors[i] for i in counts.keys())]
+    hex_colors = [RGB2HEX(ordered_colors[i]) for i in counts.keys()]
     rgb_colors = [ordered_colors[i] for i in counts.keys()]
 
     if show_chart:
         plt.figure(figsize=(8, 6))
         plt.pie(counts.values(), labels=hex_colors, colors=hex_colors)
-    return rgb_colors
+    return rgb_colors, counts.values()
 
 
-get_colors(image)
+get_colors(image, number_of_colors=8, show_chart=True)
