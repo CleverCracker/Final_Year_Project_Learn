@@ -4,6 +4,7 @@ from collections import Counter
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
+import pymongo
 from skimage.color import deltaE_cie76, rgb2lab
 from sklearn.cluster import KMeans
 
@@ -72,3 +73,4 @@ def get_colors(image, number_of_colors=5, show_chart=False):
 
 
 get_colors(image, number_of_colors=8, show_chart=True)
+d
