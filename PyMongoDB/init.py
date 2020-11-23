@@ -47,3 +47,5 @@ mylist = [
     {"name": "Chuck", "address": "Main Road 989"},
     {"name": "Viola", "address": "Sideway 1633"}
 ]
+
+testCollection.insert_many(mylist)
